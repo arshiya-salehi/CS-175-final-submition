@@ -1,0 +1,5 @@
+Policy,Avg Latency (ms),P95 Latency (ms),P99 Latency (ms),SLA Violations,SLA Compliance %,Avg Cost ($),Avg Queue,Max Queue,Avg Reward
+Threshold,36.46,41.45,42.80,0,100.00,579889.54,0.00,0.0,-27.95
+Q-Learning,49.64,62.73,68.21,0,100.00,81483.10,0.00,0.0,-7.62
+DQN,20.16,26.01,29.62,0,100.00,592615.68,0.00,0.0,-115.60
+PPO,43.29,54.88,60.83,0,100.00,84276.77,0.00,0.0,-16.37

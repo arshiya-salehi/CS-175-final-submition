@@ -1,0 +1,54 @@
+{
+  "Threshold": {
+    "avg_reward": -27.953699999999998,
+    "std_reward": 0.0,
+    "avg_cost": 579889.5360000001,
+    "std_cost": 0.0,
+    "avg_load": 75.05999999999999,
+    "avg_queue": 0.0,
+    "max_queue": 0.0,
+    "avg_instances": 57.105,
+    "num_scale_ups": 15.0,
+    "num_scale_downs": 1.0,
+    "num_no_change": 184.0
+  },
+  "Q-Learning": {
+    "avg_reward": -7.615700000000001,
+    "std_reward": 8.881784197001252e-16,
+    "avg_cost": 81483.09599999958,
+    "std_cost": 0.0,
+    "avg_load": 91.535,
+    "avg_queue": 0.0,
+    "max_queue": 0.0,
+    "avg_instances": 46.834999999999994,
+    "num_scale_ups": 47.0,
+    "num_scale_downs": 46.0,
+    "num_no_change": 107.0
+  },
+  "DQN": {
+    "avg_reward": -115.59549999999999,
+    "std_reward": 1.4210854715202004e-14,
+    "avg_cost": 592615.6800000018,
+    "std_cost": 1.1641532182693481e-10,
+    "avg_load": 46.205,
+    "avg_queue": 0.0,
+    "max_queue": 0.0,
+    "avg_instances": 93.625,
+    "num_scale_ups": 200.0,
+    "num_scale_downs": 0.0,
+    "num_no_change": 0.0
+  },
+  "PPO": {
+    "avg_reward": -16.365200000000005,
+    "std_reward": 3.552713678800501e-15,
+    "avg_cost": 84276.76799999995,
+    "std_cost": 1.4551915228366852e-11,
+    "avg_load": 83.95000000000002,
+    "avg_queue": 0.0,
+    "max_queue": 0.0,
+    "avg_instances": 51.235,
+    "num_scale_ups": 94.0,
+    "num_scale_downs": 88.0,
+    "num_no_change": 18.0
+  }
+}
