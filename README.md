@@ -95,43 +95,66 @@ All results are exported to:
 ## 📁 Project Structure
 
 ```
-gym-scaling/
-├── README.md                          # This file
-├── PROJECT_SUMMARY.md                 # Detailed project overview
-├── REQUIREMENTS.md                    # Installation guide
-├── USAGE_GUIDE.md                     # Complete usage instructions
+gym-scaling copy/
+├── README.md
+├── ADOBE_GYM_ENVIRONMENT.md
+├── requirements.txt
+├── setup.py
+├── LICENSE
+├── CODE_OF_CONDUCT.md
+├── COPYRIGHT
 │
-├── models/                            # Trained models (ready to use)
-│   ├── qlearning_extended_*.pkl       # Q-Learning model
-│   ├── ppo_simple_*.zip               # PPO model
-│   ├── dqn_m4gpu_*.zip                # DQN model
-│   └── best/best_model.zip            # Best DQN checkpoint
+├── models/                       # Trained models (present)
+│   ├── qlearning_extended_20251129_175127.pkl
+│   ├── ppo_simple_20251129_180558.zip
+│   ├── dqn_notebook_trained.zip
+│   ├── dqn_m4gpu_sine_curve_20251129_174102_final.zip
+│   ├── dqn_simple_sine_curve_20251129_192916.zip
+│   └── scaling_model.pkl
 │
-├── train_qlearning_extended.py       # Q-Learning training
-├── train_ppo_m4_gpu.py                # PPO training (M4 GPU)
-├── train_dqn_m4_gpu.py                # DQN training (M4 GPU)
+├── src/                          # Training & utilities (scripts live here)
+│   ├── train_qlearning_extended.py
+│   ├── train_dqn_simple.py
+│   ├── train_dqn_m4_gpu.py
+│   ├── train_ppo_m4_gpu.py
+│   ├── demo_all_models.py
+│   ├── verify_all_models.py
+│   └── README.md
 │
-├── verify_all_models.py               # Model verification
-├── model_evaluation.ipynb             # Main evaluation notebook
-├── autoscaling_demo.ipynb             # Environment exploration
+├── demo_generation/              # 🎬 Demo & GIF generation tools
+│   ├── demo_all_models.py
+│   ├── demo_no_render.py
+│   ├── generate_demo_gif.py
+│   ├── record_demo_video.py
+│   ├── run_demo.sh
+│   ├── TESTS (e.g., test_demo.py, test_gif_generation.py)
+│   └── README.md
 │
-├── demo_generation/                   # 🎬 Demo & GIF generation tools
-│   ├── demo_all_models.py             # Interactive visual demo
-│   ├── demo_no_render.py              # Text-based demo (always works)
-│   ├── generate_demo_gif.py           # GIF creation
-│   ├── run_demo.sh                    # Interactive menu
-│   └── DEMO_GUIDE.md                  # Complete demo guide
+├── queue_diagnostics/            # 🔍 Queue analysis & diagnostic tools
+│   ├── diagnostic_queue_check.py
+│   ├── quick_queue_test.py
+│   ├── diagnostic_queue_check.ipynb
+│   ├── diagnostic_cells.json
+│   └── README.md
 │
-├── queue_diagnostics/                 # 🔍 Queue analysis & diagnostic tools
-│   ├── diagnostic_queue_check.py      # Queue behavior testing
-│   ├── diagnostic_queue_check.ipynb   # Interactive queue analysis
-│   └── README.md                      # Queue analysis guide
+├── gym_scaling/                  # Environment package
+│   ├── envs/
+│   │   ├── scaling_env.py
+│   │   ├── helpers.py
+│   │   ├── rendering.py
+│   │   └── __init__.py
+│   ├── load_generators.py
+│   ├── env_wrapper.py
+│   └── __init__.py
 │
-├── evaluation_summary.csv             # Results summary
-├── evaluation_results.json            # Detailed results
+├── images/
+│   └── sin_input_result.gif
 │
-└── gym_scaling/                       # Environment package
-    └── envs/scaling_env.py            # Core environment
+├── project.ipynb                 # Evaluation notebook
+├── project.html                  # Notebook export
+├── evaluation_summary.csv        # Results summary
+├── evaluation_summary_detailed.csv
+└── evaluation_results.json       # Detailed results
 ```
 
 ---
