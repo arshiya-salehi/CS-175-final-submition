@@ -413,4 +413,4 @@ The Adobe Gym-Scaling environment is also MIT licensed.
 - [Project Summary](PROJECT_SUMMARY.md)
 - [Evaluation Notebook](model_evaluation.ipynb)
 
-**Get Started:** `jupyter notebook model_evaluation.ipynb` 🚀
+**Get Started:** `jupyter notebook project.ipynb` 🚀
