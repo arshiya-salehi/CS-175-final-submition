@@ -1,0 +1,61 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": ["## 2. Environment Wrapper"]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {},
+      "outputs": [],
+      "source": [
+        "class GymnasiumWrapper(gym.Env):\n",
+        "    def __init__(self, load_pattern='SINE_CURVE'):\n",
+        "        super().__init__()\n",
+        "        self.env = ScalingEnv()\n",
+        "        self.env.scaling_env_options['input'] = INPUTS[load_pattern]\n",
+        "        self.env.change_rate = 1\n",
+        "        self.action_space = spaces.Discrete(self.env.num_actions)\n",
+        "        self.observation_space = spaces.Box(low=0.0, high=np.inf, shape=(5,), dtype=np.float32)\n",
+        "    \n",
+        "    def reset(self, seed=None, options=None):\n",
+        "        if seed is not None:\n",
+        "            np.random.seed(seed)\n",
+        "        obs = self.env.reset()\n",
+        "        return obs.astype(np.float32), {}\n",
+        "    \n",
+        "    def step(self, action):\n",
+        "        obs, reward, done, info = self.env.step(action)\n",
+        "        return obs.astype(np.float32), reward, done, False, info\n",
+        "    \n",
+        "    @property\n",
+        "    def total_cost(self):\n",
+        "        return self.env.total_cost\n",
+        "    \n",
+        "    @property\n",
+        "    def instances(self):\n",
+        "        return self.env.instances\n",
+        "    \n",
+        "    @property\n",
+        "    def load(self):\n",
+        "        return self.env.load\n",
+        "    \n",
+        "    @property\n",
+        "    def queue_size(self):\n",
+        "        return self.env.queue_size\n",
+        "    \n",
+        "    @property\n",
+        "    def influx(self):\n",
+        "        return self.env.influx\n",
+        "    \n",
+        "    @property\n",
+        "    def actions(self):\n",
+        "        return self.env.actions\n",
+        "\n",
+        "print('✓ Wrapper defined')"
+      ]
+    }
+  ]
+}
