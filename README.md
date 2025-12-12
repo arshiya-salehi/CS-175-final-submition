@@ -159,14 +159,6 @@ gym-scaling copy/
 
 ---
 
-## 🎓 Documentation
-
-- **[PROJECT_SUMMARY.md](PROJECT_SUMMARY.md)** - Complete project overview, methodology, and results
-- **[REQUIREMENTS.md](REQUIREMENTS.md)** - Detailed installation instructions
-- **[USAGE_GUIDE.md](USAGE_GUIDE.md)** - How to run everything (evaluation, training, testing)
-
----
-
 ## 🔬 Methodology
 
 ### Environment
