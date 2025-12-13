@@ -44,6 +44,9 @@ git clone <your-repo-url>
 # Install dependencies
 pip install -r requirements.txt
 
+# Note any version of numpy higher than 3.0 or some version 2.0 might not be supported you can use any version from numpy>=1.17.1,<2.0.0
+# other tested numpy version that worked is 2.3.5
+
 # install if needed
 pip install -e .
 
