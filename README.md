@@ -32,6 +32,11 @@ All methods significantly outperform the **Threshold-Based Baseline** (Kubernete
 
 ---
 
+## Data needed for the project
+
+This project does not need any data to get downloaded. It has the Adobe Gym Environment within it, and also all the trained models for DQN, PPO,a nd Q-learning 
+But if needed, training the script, the commands for training scripts are within the training_usage.md file and the scripts its self in src.
+
 ## 🚀 Quick Start
 
 ### 1. Installation
@@ -247,16 +252,7 @@ jupyter notebook project.ipynb
 
 ### Train New Models
 
-```bash
-# Q-Learning (fast: ~10 minutes)
-python train_qlearning_extended.py
-
-# PPO (medium: ~3 hours)
-python train_ppo_m4_gpu.py --pattern SINE_CURVE --timesteps 100000 --eval
-
-# DQN (slow: ~5 hours, but necessary!)
-python train_dqn_m4_gpu.py --pattern SINE_CURVE --timesteps 200000 --eval
-```
+Training command scripts are within the training guide.md file
 
 ### Test on Different Workloads
 
