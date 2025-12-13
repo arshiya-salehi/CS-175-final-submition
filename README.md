@@ -41,21 +41,11 @@ All methods significantly outperform the **Threshold-Based Baseline** (Kubernete
 git clone <your-repo-url>
 cd gym-scaling
 
-# Create virtual environment
-python3 -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
 
 # Install dependencies
 pip install -r requirements.txt
 
-# Install gym-scaling package
-pip install -e .
-```
 
-### 2. Verify Installation
-
-```bash
-python verify_all_models.py
 ```
 
 Expected output:
