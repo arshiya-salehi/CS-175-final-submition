@@ -44,6 +44,8 @@ git clone <your-repo-url>
 # Install dependencies
 pip install -r requirements.txt
 
+# install if needed
+pip install -e .
 
 ```
 

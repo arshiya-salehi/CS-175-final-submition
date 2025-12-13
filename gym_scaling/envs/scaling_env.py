@@ -73,7 +73,7 @@ class ScalingEnv(gym.Env):
         self.num_actions = len(self.actions)
         self.action_space = spaces.Discrete(self.num_actions)
         self.observation_size = 5
-        self.observation_space = spaces.Box(low=0.0, high=sys.float_info.max, shape=(1, 5))
+        self.observation_space = spaces.Box(low=0.0, high=1e6, shape=(1, 5), dtype=numpy.float32)
         self.window = None
 
         self.max_instances = self.scaling_env_options['max_instances']
