@@ -18,11 +18,11 @@ setup(
     author_email='msalehib@uci.edu, saumyg3@uci.edu',
     packages=find_packages(),
     install_requires=[
-        'gym>=0.14.0',
-        'overrides>=1.9',
-        'numpy>=1.17.1,<2.0.0',
-        'stable-baselines3>=1.6.0',
-        'torch>=1.12.0',
+        'gymnasium>=1.2.0',
+        'overrides>=7.0.0',
+        'numpy==2.3.5',
+        'stable-baselines3==2.7.0',
+        'torch>=2.3.0',
         'matplotlib>=3.5.0',
         'pandas>=1.3.0'
     ],
@@ -34,5 +34,8 @@ setup(
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
+        'Programming Language :: Python :: 3.12',
+        'Programming Language :: Python :: 3.13',
     ],
 )

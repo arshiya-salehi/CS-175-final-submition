@@ -12,10 +12,10 @@ import collections
 import random
 import sys
 
-import gym
+import gymnasium as gym
 import math
 import numpy
-from gym import spaces
+from gymnasium import spaces
 from overrides import overrides
 
 from .helpers import Instance, inverse_odds

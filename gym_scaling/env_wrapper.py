@@ -2,7 +2,7 @@
 Environment wrapper to fix observation space shape for stable-baselines3
 """
 import gymnasium as gym
-from gym import spaces
+from gymnasium import spaces
 import numpy as np
 
 
