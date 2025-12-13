@@ -60,7 +60,7 @@ pip install -e .
 Expected output:
 ```
 ✓ Q-Learning model loaded (48 states)
-✓ DQN model loaded (5,000 timesteps)
+✓ DQN model loaded (100,000 timesteps)
 ✓ PPO model loaded (100,352 timesteps)
 ✓ All models verified successfully
 ```
@@ -158,89 +158,6 @@ gym-scaling copy/
 
 ---
 
-## 🔬 Methodology
-
-### Environment
-
-**Adobe Gym-Scaling** - Realistic cloud autoscaling simulator with:
-- Request queue and variable instances
-- Instance warm-up behavior
-- Cost model ($0.20/instance/hour)
-- Multiple workload patterns
-
-**Actions:** Remove instance (-1), Do nothing (0), Add instance (+1)
-
-**Observations:** Instance count, CPU load, capacity, influx, queue size
-
-**Reward:** `-response_time - cost_per_instance * num_instances`
-
-### Algorithms
-
-**Q-Learning:**
-- Tabular method with discretized state space
-- 48 states learned
-- Training: 1,000 episodes (~10 minutes)
-
-**PPO:**
-- Policy gradient with actor-critic
-- Network: [256, 256] hidden layers
-- Training: 100,352 timesteps (~3 hours on M4)
-
-**DQN:**
-- Deep Q-Network with experience replay
-- Network: [256, 256] hidden layers
-- Training: 200,000 timesteps (~5 hours on M4)
-
-**Threshold Baseline:**
-- Rule-based (Kubernetes HPA-like)
-- Scale up if load > 80% OR queue > 100
-- Scale down if load < 40% AND queue = 0
-
----
-
-## 📈 Key Findings
-
-### 1. Q-Learning Wins! 🏆
-
-**Why it succeeded:**
-- State space is manageable (48 states sufficient)
-- SINE_CURVE workload is predictable
-- Tabular methods excel at structured problems
-- No function approximation overhead
-
-**Performance:**
-- Best reward: -7.62
-- Highest load utilization: 91.5%
-- Zero queue (no SLA violations)
-- 86% cost reduction vs threshold
-
-### 2. RL Vastly Outperforms Threshold Baseline
-
-**Cost comparison:**
-- Threshold: $579,890 (baseline)
-- Q-Learning: $81,483 (86% cheaper)
-- PPO: $84,277 (85% cheaper)
-- DQN: $72,036 (88% cheaper)
-
-**All RL methods achieve 7x cost reduction!**
-
-### 3. Training Duration Matters
-
-**DQN performance:**
-- 10k steps: Failed (massive queue, -52.25 reward)
-- 200k steps: Expected to match PPO (-10 to -15 reward)
-
-**Lesson:** Deep RL needs adequate training time!
-
-### 4. Simpler Can Be Better
-
-**Key insight:** Not all problems require deep learning!
-- Q-Learning: Simple, interpretable, best performance
-- PPO/DQN: More complex, need more training
-- Choose algorithm based on problem structure
-
----
-
 ## 🔧 Usage Examples
 
 ### Evaluate Pre-Trained Models
@@ -292,40 +209,6 @@ jupyter notebook queue_diagnostics/diagnostic_queue_check.ipynb
 ```
 
 See `demo_generation/DEMO_GUIDE.md` and `queue_diagnostics/README.md` for complete instructions.
-
----
-
-## 🎯 Results Summary
-
-### Performance Metrics (SINE_CURVE, 200 steps, 10 episodes)
-
-**Q-Learning (Winner):**
-- Reward: -7.62 ⭐
-- Cost: $81,483
-- Load: 91.5% ⭐
-- Queue: 0 ✅
-- Actions: Balanced (47 ups, 46 downs)
-
-**PPO (Second):**
-- Reward: -16.37
-- Cost: $84,277
-- Load: 84.0%
-- Queue: 0 ✅
-- Actions: Very active (94 ups, 88 downs)
-
-**Threshold (Baseline):**
-- Reward: -27.95
-- Cost: $579,890 ❌ (7x worse!)
-- Load: 75.1%
-- Queue: 0
-- Actions: Passive (15 ups, 1 down)
-
-**DQN (Needs Retraining):**
-- Reward: -52.25 (with 10k steps)
-- Cost: $72,036 ⭐
-- Load: 84.9%
-- Queue: 6,289 ❌ (needs fixing)
-- Actions: Broken (0 ups, 41 downs)
 
 ---
 
