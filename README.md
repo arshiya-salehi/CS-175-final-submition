@@ -242,7 +242,7 @@ gym-scaling copy/
 
 ```bash
 # Run comprehensive evaluation
-jupyter notebook model_evaluation.ipynb
+jupyter notebook project.ipynb
 ```
 
 ### Train New Models
