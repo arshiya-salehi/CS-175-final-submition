@@ -39,7 +39,6 @@ All methods significantly outperform the **Threshold-Based Baseline** (Kubernete
 ```bash
 # Clone repository
 git clone <your-repo-url>
-cd gym-scaling
 
 
 # Install dependencies
